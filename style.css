@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: "Noto Sans", sans-serif;
+}
+
+body * { /* o asteristico(*) serve para que todos os estilos colocados dentro 
+    vai servir para todos os elementos dentro do Body*/
+    box-sizing: border-box;
+}
+
+.main-login {
+    width: 100vw;
+    height: 100vh;
+    background-color: #201b2c;
+    display: flex; /* coloca lado a lado */
+    /* Colocar ao centro */
+    justify-content: center; /* eixo x */
+    align-items: center; /* eixo y */
+}
+
+.left-login {
+    width: 50vw; /* ocupa 50% no eixo x */
+    height: 100vh; /* ocupa 100% no eixo y */
+    display: flex;
+    /* Colocar ao centro */
+    justify-content: center;
+    align-items: center;
+    /* Coloca um por cima do outro */
+    flex-direction: column;
+}
+
+.left-login > h1 { /* chamar elementos dentro da sua classe  > h1, no caso de ter mais que 1 H1 e 
+    caso queiramos cores diferentes já não dá */
+    font-size: 3vw;
+    color: #fff;
+}
+
+.left-login-image {
+    width: 30vw;
+}
+
+.right-login {
+    width: 50vw; /* ocupa 50% no eixo x */
+    height: 100vh; /* ocupa 100% no eixo y */
+    display: flex;
+    /* Colocar ao centro */
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login {
+    width: 60%; /* ocupa 60% de 50vw(right-login) no eixo x */
+    display: flex;
+    /* Colocar ao centro */
+    justify-content: center;
+    align-items: center;
+    /* Coloca um por cima do outro */
+    flex-direction: column;
+    padding: 30px 35px; /* margem do lado de dentro */
+    background: #2f2841;
+    border-radius: 20px; /* arredondamento das extremidades */
+    box-shadow: 0px 10px 40px #00000056; /* sombra */
+}
+
+.card-login > h1 {
+    color: #fff;
+    font-weight: 800; /* grossura da fonte */
+    margin: 0;
+}
+
+.textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.textfield > input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #514869;
+    color: #f0ffffde;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056; /* sombra */
+    outline: none; /* retira a cx que surgia quando selecionado */
+    box-sizing: border-box; /* evita que o input exceda o tamanho */
+}
+
+.textfield > label {
+    color: #f0ffffde;
+    margin-bottom: 10px;
+}
+
+.textfield > input::placeholder { /* */
+    color: #f0ffff94;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2b134b;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+}
+
+.btn-login:hover {
+    color: #fff;
+    background: rgb(35, 250, 2);
+}
+
+@media only screen and (max-width: 950px) {
+    /*Enquanto tiver uma largura de 950px adicione os seguintes elementos */
+    .card-login {
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    /*Enquanto tiver uma largura de 600px adicione os seguintes elementos */
+    .main-login {
+        flex-direction: column;
+    }
+
+    .left-login > h1 {
+        display: none; /*Retira o titulo para simplificar*/
+    }
+
+    .left-login { /*Para ocupar a largura da página*/
+        width: 100%;
+        height: auto;
+    }
+
+    .right-login {
+        width: 100%;
+        height: auto;
+    }
+
+    .left-login-image {
+        width: 50vw;
+    }
+
+    .card-login {
+        width: 90%;
+    }
+}
